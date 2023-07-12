@@ -12,12 +12,12 @@
     <swiper-slide *ngFor="let slide of slides">
       <ion-item>
         <ion-label>
-          <h1 class="my-favorite-text-color">{{slide.title}}</h1>
+          <h1 class="my-favorite-text-color ion-text-capitalize">{{slide.title}}</h1>
         </ion-label>
       </ion-item>
       <img src="{{slide.img}}" class="img_slide"/>
-      <ion-icon class="slide-icon" name="slide-icon" name="{{slide.icon}}"></ion-icon>
-      <p class="slide-description">"{{slide.description}}"</p>
+      <ion-icon class="slide-icon ion-float-right" name="slide-icon" name="{{slide.icon}}"></ion-icon>
+      <p class="ion-text-justify">"{{slide.description}}"</p>
       <ion-searchbar class="ion-searchbar" color="warning" placeholder="Buscar"></ion-searchbar>
     </swiper-slide>
 
