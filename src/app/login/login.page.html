@@ -1,11 +1,12 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Login</ion-title>
+    <ion-title class="ion-text-center">Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="loginForm">
+  <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
+
     <ion-item>
       <ion-input label="Email" labelPlacement="floating" placeholder="name@example.com" formControlName="email"></ion-input>
     </ion-item>  
@@ -28,5 +29,15 @@
         </ng-container>
       </div>
     </ion-item>  
+    <ion-button 
+      class="ion-margin-top"
+      expand="full"
+      Shape="round"
+      color="secondary"
+      [disabled]="!loginForm.valid"
+      type="submit"
+      >
+      Ingresar
+    </ion-button>
   </form>  
 </ion-content>
