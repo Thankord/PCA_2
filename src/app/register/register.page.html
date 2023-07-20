@@ -1,61 +1,75 @@
-<ion-header>
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-buttons>
-      <ion-button (click)="goToLogin()"> Atras </ion-button>
+    <!-- <ion-title>Registrarse</ion-title> -->
+    <ion-buttons slot="start">
+      <ion-back-button default="login" text=""> </ion-back-button>
+      <!-- <ion-button (click)="goToLogin()"> Atras </ion-button> -->
     </ion-buttons>
-    <ion-title>Registro</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <form
-    [formGroup]="registerForm"
-    (ngSubmit)="registerUser(registerForm.value)"
-  >
-    <ion-item>
-      <ion-input
-        label="Email"
-        labelPlacement="floating"
-        placeholder="name@example.com"
-        formControlName="email"
-      ></ion-input>
-    </ion-item>
+<ion-content class="bg-color">
+  <ion-card class="ion-no-margin">
+    <ion-card-header>
+      <ion-card-title>Registrarse</ion-card-title>
+      <ion-card-subtitle
+        >Crea tu cuenta llenando el formulario</ion-card-subtitle
+      >
+    </ion-card-header>
 
-    <ion-item>
-      <ion-input
-        label="Password"
-        labelPlacement="floating"
-        placeholder="*******"
-        formControlName="password"
-      ></ion-input>
-    </ion-item>
+    <ion-card-content>
+      <div class="wrapform">
+        <form
+          [formGroup]="registerForm"
+          (ngSubmit)="registerUser(registerForm.value)"
+        >
+          <ion-item>
+            <ion-input label="Name" labelPlacement="floating" placeholder="Nombre" formControlName="name"></ion-input>
+            <ion-icon name="person-outline"></ion-icon>
+          </ion-item>
 
-    <ion-item>
-      <ion-input
-        label="Name"
-        labelPlacement="floating"
-        placeholder="Nombre"
-        formControlName="name"
-      ></ion-input>
-    </ion-item>
+          <ion-item>
+            <ion-input label="Last Name" labelPlacement="floating" placeholder="Apellido" formControlName="last_name"></ion-input>
+            <ion-icon name="Person-outline"></ion-icon>
+          </ion-item>
 
-    <ion-item>
-      <ion-input
-        label="Last Name"
-        labelPlacement="floating"
-        placeholder="Apellido"
-        formControlName="last_name"
-      ></ion-input>
-    </ion-item>
+          <ion-item>
+            <ion-input label="Email" labelPlacement="floating" placeholder="name@example.com" formControlName="email"></ion-input>
+            <ion-icon name="mail-outline"></ion-icon>
+          </ion-item>
 
-    <ion-button
-      expand="full"
-      Shape="round"
-      color="success"
-      type="submit"
-      [disabled]="!registerForm.valid"
-    >
-      Registrarse
-    </ion-button>
-  </form>
+          <ion-item>
+            <ion-input label="Password" labelPlacement="floating" placeholder="*******" formControlName="password"></ion-input>
+            <ion-icon name="lock-open-outline"></ion-icon>
+          </ion-item>
+
+          <ion-button expand="full" Shape="round" color="success" type="submit" [disabled]="!registerForm.valid"
+          >
+            Registrarse
+          </ion-button>
+        </form>
+      </div>
+
+      <div class="text-tag">
+        <span>
+          O regístrate con
+        </span>
+      </div>
+
+      <div>
+        <div class="social-btns">
+          <ion-button fill="clear" class="loginbtn ion-no-padding">
+            <ion-img src="assets/images/facebook.png"></ion-img>
+          </ion-button>
+          <ion-button fill="clear" class="loginbtn ion-no-padding">
+            <ion-img src="assets/images/google.png"></ion-img>
+          </ion-button>
+          <ion-button fill="clear" class="loginbtn ion-no-padding">
+            <ion-img src="assets/images/apple.png"></ion-img>
+          </ion-button>          
+        </div>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
 </ion-content>

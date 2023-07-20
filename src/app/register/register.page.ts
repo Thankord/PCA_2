@@ -67,7 +67,7 @@ export class RegisterPage implements OnInit {
 
   registerUser(userData:any){
     console.log(userData);
-    this.authService.registerUser(userData).then(()=>{
+      this.authService.registerUser(userData).then(()=>{
       this.navCtrl.navigateBack("/login");
     })
 

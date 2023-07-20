@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { AuthenticateService } from '../services/authenticate.service';
 import { NavController } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
+import { ToastController } from '@ionic/angular';
+
 
 
 @Component({
@@ -31,6 +33,7 @@ export class LoginPage implements OnInit {
     private authService: AuthenticateService,
     private navCtrl: NavController,
     private storage: Storage,
+    private toastController: ToastController,
     ) { 
     this.loginForm = this.formBuilder.group({
       email: new FormControl(          
