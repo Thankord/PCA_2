@@ -74,4 +74,35 @@ export class LoginPage implements OnInit {
   goToRegister() {
     this.navCtrl.navigateForward("/register")
   }
+
+  async mostrarToast(message: string) {
+    const toast = await this.toastController.create({
+      message: message,
+      duration: 3000, // Duración del toast en mili segundos
+      position: 'bottom', // Puedes cambiar la posición si lo prefieres ('top', 'bottom', 'middle')
+    });
+    toast.present();
+  }
+
+  validarCampos() {
+    const emailControl = this.loginForm.get('email');
+    const passControl = this.loginForm.get('password');
+    
+    if (emailControl?.hasError('required') && emailControl.dirty) {
+      this.mostrarToast(this.validation_messages.email[0].message);
+    } else if (emailControl?.hasError('email') && emailControl?.dirty) {
+      this.mostrarToast(this.validation_messages.email[1].message);
+    }
+
+    if (passControl?.hasError('required') && passControl.dirty) {
+      this.mostrarToast(this.validation_messages.password[0].message);
+    } else if (passControl?.hasError('minlength') && passControl?.dirty) {
+      this.mostrarToast(this.validation_messages.password[1].message);
+    } else if (passControl?.hasError('maxlength') && passControl?.dirty) {
+      this.mostrarToast(this.validation_messages.password[2].message);
+    } else if (passControl?.hasError('pattern') && passControl?.dirty) {
+      this.mostrarToast(this.validation_messages.password[3].message);
+    }
+  }
+  
 }

@@ -20,19 +20,23 @@
           labelPlacement="floating"
           placeholder="name@example.com"
           formControlName="email"
+          (ionChange)="validarCampos()"
           ></ion-input>
           <ion-icon name="mail-outline"></ion-icon>
         </ion-item>
     
-        <div class="validation-errors">
+        <!-- Mensaje de advertencia mostrado debajo del campo email -->
+        
+        <!-- <div class="validation-errors">
           <ng-container *ngFor="let validation of validation_messages.email">
-            <div
-              *ngIf="loginForm.get('email')?.hasError(validation.type) && loginForm.get('email')?.dirty"
-            >
+            <div *ngIf="(
+              loginForm.get('email')?.hasError(validation.type) && 
+              loginForm.get('email')?.dirty) 
+            ">
               {{validation.message}}
             </div>
           </ng-container>
-        </div>
+        </div> -->
     
         <ion-item>
           <ion-input
@@ -41,11 +45,14 @@
           placeholder="********"
           formControlName="password"
           type="password"
+          (ionChange)="validarCampos()"
           ></ion-input>
           <ion-icon name="lock-closed-outline"></ion-icon>
         </ion-item>
 
-          <div class="validation-errors">
+          <!-- Mensaje de advertencia mostrado debajo del campo password -->
+
+          <!-- <div class="validation-errors">
             <ng-container *ngFor="let validation of validation_messages.password">
               <div
                 *ngIf="loginForm.get('password')?.hasError(validation.type) && loginForm.get('password')?.dirty"
@@ -53,7 +60,7 @@
                 {{validation.message}}
               </div>
             </ng-container>
-          </div>
+          </div> -->
         
         <ion-button
           class="ion-margin-top"
@@ -91,7 +98,7 @@
   </ion-card-content>
   <ion-card>
     <div class="ion-card-footer">
-      <span>¿No tienes una cuenta aun?</span><button class="ion-no-padding">Regístrate</button>
+      <span>¿No tienes una cuenta aun?</span><button class="ion-no-padding" routerLink="/register">Regístrate </button>
     </div>
   </ion-card>
 </ion-content>

@@ -24,22 +24,48 @@
           (ngSubmit)="registerUser(registerForm.value)"
         >
           <ion-item>
-            <ion-input label="Name" labelPlacement="floating" placeholder="Nombre" formControlName="name"></ion-input>
+            <ion-input 
+            label="Name" 
+            labelPlacement="floating" 
+            placeholder="Nombre" 
+            formControlName="name"
+            (ionChange)="validarCampos()"
+            >
+          </ion-input>
             <ion-icon name="person-outline"></ion-icon>
           </ion-item>
 
           <ion-item>
-            <ion-input label="Last Name" labelPlacement="floating" placeholder="Apellido" formControlName="last_name"></ion-input>
+            <ion-input 
+            label="Last Name" 
+            labelPlacement="floating" 
+            placeholder="Apellido" 
+            formControlName="last_name"
+            (ionChange)="validarCampos()"
+            >
+          </ion-input>
             <ion-icon name="Person-outline"></ion-icon>
           </ion-item>
 
           <ion-item>
-            <ion-input label="Email" labelPlacement="floating" placeholder="name@example.com" formControlName="email"></ion-input>
+            <ion-input 
+            label="Email" 
+            labelPlacement="floating" 
+            placeholder="name@example.com" 
+            formControlName="email"
+            (ionChange)="validarCampos()"
+            ></ion-input>
             <ion-icon name="mail-outline"></ion-icon>
           </ion-item>
 
           <ion-item>
-            <ion-input label="Password" labelPlacement="floating" placeholder="*******" formControlName="password"></ion-input>
+            <ion-input 
+            label="Password" 
+            labelPlacement="floating" 
+            placeholder="*******" 
+            formControlName="password"
+            (ionChange)="validarCampos()"
+            ></ion-input>
             <ion-icon name="lock-open-outline"></ion-icon>
           </ion-item>
 
