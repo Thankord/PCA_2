@@ -8,6 +8,18 @@
 
 <ion-content>
 
+  <h1>Artistas locales </h1>
+  <swiper-container 
+  [initialSlide]="0" 
+  [slidesPerView]="3"> 
+    <swiper-slide *ngFor="let localArtists of artlo">
+      <ion-avatar>
+        <img src="{{localArtists.image}}"/>
+        <span>{{localArtists.name}}</span>
+      </ion-avatar>
+    </swiper-slide>
+  </swiper-container>
+
   <h1>Artistas</h1>
   <swiper-container [initialSlide]="0" [slidesPerView]="3">
     <swiper-slide *ngFor="let artist of artists">
