@@ -9,7 +9,7 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./settings.page.scss'],
 })
 export class SettingsPage implements OnInit {
-  userImage = "assets/images/profile.jpeg";
+  userImage = "assets/images/profile.jpg";
   photo: any;
   constructor(private userService: UserService) { }
 

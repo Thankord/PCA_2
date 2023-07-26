@@ -22,11 +22,11 @@ export class MenuPage implements OnInit {
   }
 
   logout(){
-    this.navCtrl.navigateRoot('/login');
     // Cambiar el valor de isUserLoggedIn a false
     this.storage.set('isUserLoggedIn', false).then(() => {
       console.log('isUserLoggedIn changed to false');
     });
+    this.navCtrl.navigateRoot('/login');
   }
 
   goToSettings(){

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { IntroGuard } from './guards/intro.guard';
 import { LoginGuard } from './guards/login.guard';
+import { AuthGuard } from './guards/auth-guard.guard'; // Importamos el nuevo guard
 
 const routes: Routes = [  
   {
@@ -26,7 +27,7 @@ const routes: Routes = [
   {
     path: 'menu',
     loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule), 
-    canActivate: [IntroGuard] // Agrega el guardia IntroGuard a la ruta /menu
+    canActivate: [AuthGuard] // Agrega el guardia AuthGuard a la ruta /menu
   },
   {
     path: 'songs-modal',
@@ -37,7 +38,6 @@ const routes: Routes = [
     loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
   },
 ];
-
 
 @NgModule({
   imports: [
